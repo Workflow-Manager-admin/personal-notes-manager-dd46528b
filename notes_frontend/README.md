@@ -33,6 +33,39 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The main brand colors are defined as CSS variables in `src/App.css`:
 
+## Notes Manager Frontend
+
+**Features:**
+- User authentication (session-based)
+- Create, edit, and delete notes
+- List and search notes
+- Modern light UI with top navigation and modal dialogs
+- Responsive, minimal CSS (no bulky UI libraries)
+
+**API base URL:**  
+By default points to `http://localhost:8000/api`. To override, use a `.env` file:
+```
+REACT_APP_BACKEND_URL=http://your.django.backend/api
+```
+
+**Backend requirements:**  
+You need the Django backend (with RESTful endpoints) running and accessible from the client for login and notes CRUD to work.
+
+**Run the frontend locally**:
+- `npm install`
+- `npm start`
+
+**Login**:
+- Enter your valid Django API credentials on the login screen.
+
+**Main UI**:
+- Top nav bar (logout, username, brand color)
+- Main notes grid (title/content/date)
+- Create/Edit modal dialog for notes
+
+**Modifications**:
+Change theme colors in `src/App.js` (`APP_COLORS`) or adjust styles in `src/App.css`.
+
 ```css
 :root {
   --kavia-orange: #E87A41;
